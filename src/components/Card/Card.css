@@ -1,0 +1,68 @@
+.card {
+  width: clamp(60px, 18vw, 80px);
+  height: clamp(75px, 22vw, 100px);
+  perspective: 600px;
+  cursor: pointer;
+}
+
+.card__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease;
+}
+
+.card--flipped .card__inner {
+  transform: rotateY(180deg);
+}
+
+.card__back,
+.card__front {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  backface-visibility: hidden;
+  font-size: 2rem;
+  border: 2px solid #ccc;
+  background: #fff;
+  user-select: none;
+}
+
+.card__back {
+  background: linear-gradient(135deg, #4f8ef7, #7c3aed);
+  color: #fff;
+  border-color: #4f8ef7;
+}
+
+.card__front {
+  transform: rotateY(180deg);
+  background: #f8f9fa;
+}
+
+.card--matched .card__front {
+  background: #d1fae5;
+  border-color: #10b981;
+}
+
+.card:hover:not(.card--flipped) {
+  transform: translateY(-2px);
+}
+
+.card--computer-selected .card__back {
+  outline: 3px solid #f59e0b;
+  outline-offset: 2px;
+}
+
+.card--matched .card__front {
+  animation: match-pop 0.4s ease;
+}
+
+@keyframes match-pop {
+  0%   { transform: rotateY(180deg) scale(1); }
+  50%  { transform: rotateY(180deg) scale(1.15); }
+  100% { transform: rotateY(180deg) scale(1); }
+}
