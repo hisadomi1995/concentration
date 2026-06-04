@@ -4,7 +4,7 @@
 
 ## デモ
 
-https://concentration-xxx.vercel.app （デプロイ後に実際のURLに更新してください）
+https://concentration-rho.vercel.app/
 
 ## ゲームルール
 
