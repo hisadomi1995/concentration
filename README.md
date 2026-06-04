@@ -2,6 +2,10 @@
 
 ブラウザで動作するユーザー対コンピューターの神経衰弱ゲームです。
 
+## デモ
+
+https://concentration-xxx.vercel.app （デプロイ後に実際のURLに更新してください）
+
 ## ゲームルール
 
 - 8種類の絵文字カードが2枚ずつ、計16枚が裏向きに並びます
@@ -13,7 +17,6 @@
 ## セットアップ
 
 ```bash
-cd app
 npm install
 npm run dev
 ```
@@ -35,3 +38,7 @@ npm run dev
 npm run test        # 対話モード
 npx vitest run      # 一回実行
 ```
+
+## デプロイ
+
+Vercel にホスティングしています。`main` ブランチへの push で自動デプロイされます。
